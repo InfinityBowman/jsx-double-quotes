@@ -1,13 +1,13 @@
 {
-	"name": "jsx-brackets",
-	"displayName": "Auto JSX Brackets",
-	"description": "Add brackets automatically to every JSX property.",
-	"version": "1.0.1",
+	"name": "jsx-double-quotes",
+	"displayName": "Auto JSX Double Quotes",
+	"description": "Add double quotes automatically to every JSX property.",
+	"version": "1.0.0",
 	"icon": "icon.png",
-	"publisher": "imexoodeex",
+	"publisher": "InfinityBowman",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ImExoOdeex/jsx-brackets"
+		"url": "https://github.com/InfinityBowman/jsx-double-quotes"
 	},
 	"license": "MIT",
 	"engines": {
@@ -23,19 +23,19 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "jsx-brackets.enable",
-				"title": "Enable Auto JSX Brackets"
+				"command": "jsx-double-quotes.enable",
+				"title": "Enable Auto JSX Double Quotes"
 			},
 			{
-				"command": "jsx-brackets.disable",
-				"title": "Disable Auto JSX Brackets"
+				"command": "jsx-double-quotes.disable",
+				"title": "Disable Auto JSX Double Quotes"
 			}
 		],
 		"configuration": {
-			"title": "JSX Brackets",
+			"title": "JSX Double Quotes",
 			"type": "object",
 			"properties": {
-				"jsx-brackets.enabled": {
+				"jsx-double-quotes.enabled": {
 					"type": "boolean",
 					"default": true,
 					"description": "Enable or disable the extension."
@@ -47,17 +47,12 @@
 		"vscode:prepublish": "pnpm run compile",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
-		"pretest": "pnpm run compile && pnpm run lint",
-		"lint": "eslint src --ext ts",
 		"test": "vscode-test"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.87.0",
 		"@types/mocha": "^10.0.6",
 		"@types/node": "18.x",
-		"@typescript-eslint/eslint-plugin": "^7.0.2",
-		"@typescript-eslint/parser": "^7.0.2",
-		"eslint": "^8.56.0",
 		"typescript": "^5.3.3",
 		"@vscode/test-cli": "^0.0.6",
 		"@vscode/test-electron": "^2.3.9"

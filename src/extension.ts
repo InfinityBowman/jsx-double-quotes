@@ -1,18 +1,18 @@
 import * as vscode from "vscode";
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log("JSX Auto Brackets is now active!");
+	console.log("JSX Auto Double Quotes is now active!");
 
 	const configEnabled = vscode.workspace
-		.getConfiguration("jsx-brackets.enabled")
+		.getConfiguration("jsx-double-quotes.enabled")
 		.get("enabled");
 
 	let enabled = typeof configEnabled === "boolean" ? configEnabled : true;
 
-	const config = vscode.workspace.getConfiguration("jsx-brackets");
+	const config = vscode.workspace.getConfiguration("jsx-double-quotes");
 
 	const enableCommand = vscode.commands.registerCommand(
-		"jsx-brackets.enable",
+		"jsx-double-quotes.enable",
 		() => {
 			enabled = true;
 			config.update("enabled", true);
@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	const disableCommand = vscode.commands.registerCommand(
-		"jsx-brackets.disable",
+		"jsx-double-quotes.disable",
 		() => {
 			enabled = false;
 			config.update("enabled", false);
@@ -100,7 +100,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		if (textAfterCursor.startsWith("=")) {
 			vscode.commands.executeCommand("editor.action.insertSnippet", {
-				snippet: "{$1}"
+				snippet: '"$1"'
 			});
 		}
 	});
